@@ -12,6 +12,7 @@ class NYT:
         self.parms['q'] = q
         self.parms['facet_field']='source'
         self.parms['facet']='true'
+        self.parms['fq']='The New York Times'
         self.parms['api-key'] = self.api_key
         self.url = self.serviceurl + urllib.parse.urlencode(self.parms)
         print("retrieving:",self.url)
