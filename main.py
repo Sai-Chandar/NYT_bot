@@ -1,16 +1,20 @@
 from Class import NYT, Twitter
 import time
-from os import environ
+import os
 
 if __name__ == '__main__':
-    NYT_API = environ['NYT_API']
-    CONSUMER_KEY = environ['CONSUMER_KEY']
-    CONSUMER_SECRET = environ['CONSUMER_SECRET']
-    ACCESS_TOKEN = environ['ACCESS_TOKEN']
-    ACCESS_TOKEN_SECRET = environ['ACCESS_TOKEN_SECRET']
+    NYT_API = os.environ.get('NYT_API')
+    CONSUMER_KEY = os.environ.get('CONSUMER_KEY')
+    CONSUMER_SECRET = os.environ.get('CONSUMER_SECRET')
+    ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
+    ACCESS_TOKEN_SECRET = os.environ.get('ACCESS_TOKEN_SECRET')
     nyt = NYT(NYT_API)
     Twitter = Twitter()
-    Twitter.twitter_Authentication(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+    try:
+        Twitter.twitter_Authentication(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+    except:
+        print("Authentication error")
+        exit()
     while True:
         mention = Twitter.mentions()
         if mention == None:
