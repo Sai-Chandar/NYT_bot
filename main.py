@@ -3,10 +3,10 @@ import time
 import os
 
 if __name__ == '__main__':
-    NYT_API = os.getenv('NYT_API')
-    CONSUMER_KEY = os.getenv('CONSUMER_KEY')
-    CONSUMER_SECRET = os.getenv('CONSUMER_SECRET')
-    ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')
+    NYT_API = os.environ('NYT_API')
+    CONSUMER_KEY = os.environ('CONSUMER_KEY')
+    CONSUMER_SECRET = os.environ('CONSUMER_SECRET')
+    ACCESS_TOKEN = os.environ('ACCESS_TOKEN')
     ACCESS_TOKEN_SECRET = os.getenv('ACCESS_TOKEN_SECRET')
     nyt = NYT(NYT_API)
     Twitter = Twitter()
