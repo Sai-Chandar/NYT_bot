@@ -51,3 +51,4 @@ class Twitter:
         #remain_search_limits = limits['resources']['search']['/search/tweets']['remaining']
         self.remain_search_limits = self.limits['resources']['statuses']['/statuses/mentions_timeline']['remaining']
         print( "remaining tokens left for this 15 min session:", self.remain_search_limits )
+        return self.remain_search_limits

@@ -13,7 +13,10 @@ if __name__ == '__main__':
             time.sleep(60)
             continue
         else:
-            status = mention.text.replace("@Nsaichandar","").strip()
+            status = mention.text.lower().replace("@newyorktimesb","").strip()
             hits = "Number of NYT articles '{}' appeared: {}".format(status, nyt.frequency(status))
-            Twitter.tweet(hits, mention.id)
+            tokens = Twitter.tweet(hits, mention.id)
             print("tweeted.")
+        if token <= 10:
+            print("Reached token limit. Waiting.")
+            time.sleep(900)
