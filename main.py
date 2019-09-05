@@ -1,8 +1,13 @@
-from hidden import *
 from Class import NYT, Twitter
 import time
+import os
 
 if __name__ == '__main__':
+    NYT_API = os.getenv('NYT_API')
+    CONSUMER_KEY = os.getenv('CONSUMER_KEY')
+    CONSUMER_SECRET = os.getenv('CONSUMER_SECRET')
+    ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')
+    ACCESS_TOKEN_SECRET = os.getenv('ACCESS_TOKEN_SECRET')
     nyt = NYT(NYT_API)
     Twitter = Twitter()
     Twitter.twitter_Authentication(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
