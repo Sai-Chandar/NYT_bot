@@ -1,13 +1,13 @@
 from Class import NYT, Twitter
 import time
-import os
+from os import environ
 
 if __name__ == '__main__':
-    NYT_API = os.environ('NYT_API')
-    CONSUMER_KEY = os.environ('CONSUMER_KEY')
-    CONSUMER_SECRET = os.environ('CONSUMER_SECRET')
-    ACCESS_TOKEN = os.environ('ACCESS_TOKEN')
-    ACCESS_TOKEN_SECRET = os.environ('ACCESS_TOKEN_SECRET')
+    NYT_API = environ['NYT_API']
+    CONSUMER_KEY = environ['CONSUMER_KEY']
+    CONSUMER_SECRET = environ['CONSUMER_SECRET']
+    ACCESS_TOKEN = environ['ACCESS_TOKEN']
+    ACCESS_TOKEN_SECRET = environ['ACCESS_TOKEN_SECRET']
     nyt = NYT(NYT_API)
     Twitter = Twitter()
     Twitter.twitter_Authentication(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
