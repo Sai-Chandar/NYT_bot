@@ -26,6 +26,6 @@ if __name__ == '__main__':
             hits = "Number of NYT articles '{}' appeared: {}".format(status, nyt.frequency(status))
             tokens = Twitter.tweet(hits, mention.id)
             print("tweeted.")
-        if token <= 10:
+        if tokens <= 10:
             print("Reached token limit. Waiting.")
             time.sleep(900)
