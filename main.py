@@ -8,7 +8,7 @@ if __name__ == '__main__':
     CONSUMER_SECRET = os.environ.get('CONSUMER_SECRET')
     ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
     ACCESS_TOKEN_SECRET = os.environ.get('ACCESS_TOKEN_SECRET')
-    print(NYT_API, CONSUMER_KEY)
+    print(type(NYT_API), CONSUMER_KEY)
     nyt = NYT(NYT_API)
     Twitter = Twitter()
     try:
